@@ -7,20 +7,28 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
+        Dev devInstrutor1 = new Dev();
+        devInstrutor1.setNome("Zelda");
+        Dev devInstrutor2 = new Dev();
+        devInstrutor2.setNome("Fiona");
+
         Curso curso1 = new Curso();
         curso1.setTitulo("curso java");
         curso1.setDescricao("descrição curso java");
         curso1.setCargaHoraria(8);
+        curso1.setInstrutor(devInstrutor1);
 
         Curso curso2 = new Curso();
         curso2.setTitulo("curso js");
         curso2.setDescricao("descrição curso js");
         curso2.setCargaHoraria(4);
+        curso2.setInstrutor(devInstrutor2);
 
         Mentoria mentoria = new Mentoria();
         mentoria.setTitulo("mentoria de java");
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
+        mentoria.setInstrutor(devInstrutor1);
 
         /*System.out.println(curso1);
         System.out.println(curso2);

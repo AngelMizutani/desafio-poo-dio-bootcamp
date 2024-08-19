@@ -15,6 +15,7 @@ public class Dev {
     public void progredir() {
         Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
         if(conteudo.isPresent()) {
+            imprimirCertificado(this, conteudo.get());
             this.conteudosConcluidos.add(conteudo.get());
             this.conteudosInscritos.remove(conteudo.get());
         } else {
@@ -35,6 +36,10 @@ public class Dev {
                 .stream()
                 .mapToDouble(Conteudo::calcularXp)
                 .sum();*/
+    }
+
+    private void imprimirCertificado(Dev dev, Conteudo conteudo) {
+        System.out.println("Certificamos que " + dev.getNome() + " concluiu o conteúdo: " + conteudo.getTitulo());
     }
 
 
